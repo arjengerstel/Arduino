@@ -1,3 +1,5 @@
+// test addition
+
 #include <Adafruit_NeoPixel.h>
 
 #define stripLength 2
