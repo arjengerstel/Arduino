@@ -7,7 +7,7 @@
 
 #define PIN 6
 #define stripLength 16
-#define numPixels 6
+#define numPixels 16
 #define numTypes 6
 #define numPatterns 2
 #define FALSE 0
@@ -180,15 +180,18 @@ void setup() {
 
    for (int i=0; i<numPixels; i++)
    {
-     InitPixel(i,T_GRB, 2);
+     InitPixel(i,T_GRB, T_OFF);
    }
-   
+
+ /*  
    InitPixel(0, T_GRB, T_WELDING);
    InitPixel(1, T_GRB, T_FIRE);
    InitPixel(2, T_GRB, T_TRAFFIC_3);
    InitPixel(3, T_GRB, T_LEVEL_CROSSING_NL_AKI);
-   InitPixel(4, T_GRB, T_OFF);
-   InitPixel(5, T_GRB, T_OFF);
+   InitPixel(4, T_GRB, T_WELDING);
+   InitPixel(5, T_GRB, T_BLUE);
+ */
+ //  InitPixel(6, T_GRB, T_GREEN);
    
 
    
@@ -212,6 +215,7 @@ void loop() {
   strip.show();
 
  // Serial.println("loop");
+ /*
       if ((!digitalRead(PinSW))) {        // check if pushbutton is pressed
             // VirtualPosition = 0;            // if YES, then reset counter to ZERO
             if (pixel[VirtualPosition].Mode == M_SAFE)
@@ -237,7 +241,7 @@ void loop() {
 
       PreviousVirtualPosition = VirtualPosition;
 
-
+*/
 }
 
 void InitPixel(int px, boolean tp, byte pt) {
@@ -264,7 +268,7 @@ void UpdatePixel(int px)
         break;
     
       case T_FIRE: 
-        strip.setPixelColor(px, random(0xFF), random(0x40), 0);
+        strip.setPixelColor(px, random(0xdf) + 0x20, random(0x20) + 0x10, random(0x05));
         break;
     
       case T_WELDING: 
