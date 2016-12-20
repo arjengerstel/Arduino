@@ -2,7 +2,7 @@
 
 #define PIN 6
 #define stripLength 16
-#define numPixels 2
+#define numPixels 16
 #define numTypes 6
 #define numPatterns 2
 #define FALSE 0
@@ -76,7 +76,7 @@ void setup() {
    // initialize pixels 
    strip.begin();
    
-   InitPixel(0,0);
+   InitPixel(0,1);
    InitPixel(1,1);
    InitPixel(2,2);
    
@@ -84,7 +84,7 @@ void setup() {
 
 void loop() {
 
-  UpdatePixels(1000);
+  UpdatePixels(0);
 
   strip.show();
 

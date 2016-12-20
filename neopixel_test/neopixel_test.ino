@@ -108,10 +108,10 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(stripLength, PIN, NEO_GRB + NEO_KHZ8
  PixelData pixel[stripLength];
  
 // include the library code:
-#include <LiquidCrystal.h>
+//#include <LiquidCrystal.h>
 
 // initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
+//LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
 
 
 // -----------------------------------------------------------------------------
@@ -153,19 +153,19 @@ void setup() {
     pinMode(PinDT, INPUT);
     pinMode(PinSW, INPUT_PULLUP);
 
-    attachInterrupt(0, isr, FALLING);   // interrupt 0 is always connected to pin 2 on Arduino UNO
+ //   attachInterrupt(0, isr, FALLING);   // interrupt 0 is always connected to pin 2 on Arduino UNO
 
   
   // set up the number of columns and rows on the LCD
-  lcd.begin(16, 2);
+//  lcd.begin(16, 2);
 
   // Print a message to the LCD.
-  lcd.print("Rotary Encoder");
+ // lcd.print("Rotary Encoder");
   // set the cursor to column 0, line 1
   // line 1 is the second row, since counting begins with 0
-  lcd.setCursor(0, 1);
+ // lcd.setCursor(0, 1);
   // print to the second line
-  lcd.print("Value: ");
+ // lcd.print("Value: ");
 
    // initialize pixels 
    strip.begin();
@@ -183,15 +183,15 @@ void setup() {
      InitPixel(i,T_GRB, T_OFF);
    }
 
- /*  
+ 
    InitPixel(0, T_GRB, T_WELDING);
    InitPixel(1, T_GRB, T_FIRE);
    InitPixel(2, T_GRB, T_TRAFFIC_3);
    InitPixel(3, T_GRB, T_LEVEL_CROSSING_NL_AKI);
    InitPixel(4, T_GRB, T_WELDING);
    InitPixel(5, T_GRB, T_BLUE);
- */
- //  InitPixel(6, T_GRB, T_GREEN);
+ 
+   InitPixel(6, T_GRB, T_GREEN);
    
 
    
